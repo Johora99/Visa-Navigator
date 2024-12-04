@@ -8,6 +8,7 @@ export default {
     extend: {
       colors:{
         Tangerine:'rgb(255, 119, 41)',
+        Gray:'rgb(122, 122, 122)',
       }
     },
   },

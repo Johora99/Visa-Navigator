@@ -5,6 +5,7 @@ import HomePage from "../Pages/HomePage";
 import LogInPage from "../Pages/LogInPage";
 import RegistrationPage from "../Pages/RegistrationPage";
 import AddVisaPage from "../Pages/AddVisaPage";
+import AllVisaPage from "../Pages/AllVisaPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
       {
         path:'/addVisa',
         element:<AddVisaPage></AddVisaPage>
+      },
+      {
+        path:'/allVisa',
+        loader:()=>fetch('http://localhost:5000/visaApplication'),
+        element:<AllVisaPage></AllVisaPage>
       }
     ]
   },

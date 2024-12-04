@@ -1,5 +1,5 @@
 
-
+import Swal from 'sweetalert2'
 
 export default function AddVisaPage() {
    const handleVisaApplication = (e)=>{
@@ -21,6 +21,28 @@ export default function AddVisaPage() {
     const allVisaData = {
       image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod
     }
+    fetch('http://localhost:5000/visaApplication',{
+      method:'POST',
+      headers:{
+        'content-type':'application/json',
+      },
+      body:JSON.stringify(allVisaData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire({
+    position: "center",
+    icon: "success",
+  title: "Visa Added Successfully!",
+  showConfirmButton: false,
+  timer: 1500
+});
+    })
+
+      e.target.reset()
+
+
+
     console.log(allVisaData)
    }
   return (
@@ -109,7 +131,7 @@ export default function AddVisaPage() {
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div>
             <label className='inline-block mb-2'>
-                <span className='text-base text-black font-medium'>Age</span>
+                <span className='text-base text-black font-medium'>Age Restriction</span>
             </label><br />
             <input type="number" name="age" id="" placeholder='Enter Your Age' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3'/>
         </div>
