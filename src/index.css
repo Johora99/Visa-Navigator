@@ -6,3 +6,27 @@
 .lato{
   font-family: "Lato", sans-serif;
 }
+
+ input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #888;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:checked {
+      background-color: rgb(255, 119, 41);
+      border-color: rgb(255, 119, 41);
+    }
+
+    input[type="checkbox"]:checked::after {
+      content: "✔";
+      color: white;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }

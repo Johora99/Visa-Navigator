@@ -18,7 +18,7 @@ export default function Navbar() {
     <ul className="menu menu-horizontal px-1 gap-6 *:text-lg *:font-medium">
         <NavLink to='/'><a>Home</a></NavLink>
         <NavLink><a>All visas</a></NavLink>
-        <NavLink><a>Add Visa</a></NavLink>
+        <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
         <NavLink><a>My added visas</a></NavLink>
         <NavLink><a>My Visa applications</a></NavLink>
     </ul>
@@ -50,7 +50,7 @@ export default function Navbar() {
         className="menu menu-sm dropdown-content bg-Tangerine rounded-box z-[10] mt-3 w-52 p-2 shadow right-0 *:text-white">
         <NavLink to='/'><a>Home</a></NavLink>
         <NavLink><a>All visas</a></NavLink>
-        <NavLink><a>Add Visa</a></NavLink>
+        <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
         <NavLink><a>My added visas</a></NavLink>
         <NavLink><a>My Visa applications</a></NavLink>
       </ul>
