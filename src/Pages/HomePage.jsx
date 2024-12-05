@@ -1,5 +1,7 @@
 import Banner from "../components/Banner";
 import LatestVisas from "../components/LatestVisas";
+import OurServices from "../components/OurServices";
+
 
 
 export default function HomePage() {
@@ -7,6 +9,7 @@ export default function HomePage() {
     <div>
       <Banner></Banner>
       <LatestVisas></LatestVisas>
+      <OurServices></OurServices>
     </div>
   )
 }

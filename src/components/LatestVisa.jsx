@@ -20,7 +20,7 @@ export default function LatestVisa({visa}) {
       <p className='text-base text-Gray font-medium my-2'>Application Method : {applicationMethod}</p>
     </div>
     <div className="card-actions justify-center">
-      <button className="text-white text-lg font-semibold bg-Tangerine py-2 px-5 mt-5">See Details</button>
+      <button className="text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-2 px-5 mt-5">See Details</button>
     </div>
   </div>
 </div>
