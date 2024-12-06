@@ -14,7 +14,7 @@ export default function MyAppliedVisas() {
     
   };
   return (
-     <div style={bgStyle}>
+     <div style={bgStyle} className="mb-20">
       <div className="bg-black bg-opacity-[0.5] py-10">
     <div className="container w-11/12 mx-auto">
        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-20">
