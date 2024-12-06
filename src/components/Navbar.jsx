@@ -1,7 +1,11 @@
 
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/icons8-world-50.png'
+import { useContext } from 'react'
+import { AuthContext } from '../AuthProvider/AuthProvider'
 export default function Navbar() {
+  const {user,signOutUser } = useContext(AuthContext);
+  
   return (
     <div className="w-full">
       <div>
@@ -19,15 +23,20 @@ export default function Navbar() {
         <NavLink to='/'><a>Home</a></NavLink>
         <NavLink to='/allVisa'><a>All visas</a></NavLink>
         <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
-        <NavLink><a>My added visas</a></NavLink>
-        <NavLink><a>My Visa applications</a></NavLink>
+        <NavLink to='/myAddedVisa'><a>My added visas</a></NavLink>
+        <NavLink to='/myAppliedVisa'><a>My Visa applications</a></NavLink>
     </ul>
   </div>
   <div className="navbar-end">
     <div className='hidden lg:block'>
     <div className='flex items-center gap-3'>
-    <Link to='/logIn' className='text-white text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
-    <Link to='/register' className='text-white text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
+            {
+              user ? <Link onClick={signOutUser} to='/' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
+            }
+             {
+              user ? <img src={user?.photoURL} alt="" className='w-12 h-12 rounded-full cursor-pointer' title={user?.displayName}/>:<Link to='/register' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
+             }
+           
     </div>
     </div>
     <div className="dropdown">
@@ -51,8 +60,8 @@ export default function Navbar() {
         <NavLink to='/'><a>Home</a></NavLink>
         <NavLink to='/allVisa'><a>All visas</a></NavLink>
         <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
-        <NavLink><a>My added visas</a></NavLink>
-        <NavLink><a>My Visa applications</a></NavLink>
+        <NavLink to='/myAddedVisa'><a>My added visas</a></NavLink>
+        <NavLink to='/myAppliedVisa'><a>My Visa applications</a></NavLink>
       </ul>
     </div>
   </div>
@@ -61,8 +70,11 @@ export default function Navbar() {
        </nav>
        <div className='lg:hidden'>
           <div className='flex items-center justify-center gap-3 mb-5'>
-    <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
-    <Link to='/register' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
+            {
+              user ? <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
+            }
+    
+           <Link to='/register' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
     </div>
        </div>
       </div>

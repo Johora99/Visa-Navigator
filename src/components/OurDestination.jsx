@@ -55,7 +55,7 @@ export default function OurDestination() {
               </div>
             </div>
             <div style={{backgroundImage:`url(${Img4})`}} className='bg-no-repeat bg-cover w-full p-5 rounded-xl'>
-              <div className=' w-full'>
+              <div className=' w-full bg-black bg-opacity-[0.3] p-5'>
                 <img src={australianFlag} alt="" className='w-14 h-14 rounded-3xl  right-0 top-5'/>
                 <h4 className='my-5 text-xl font-semibold'>USA</h4>
                 <p className='text-base'>Embark on your dream journey with ease! At Our Destinations, we specialize in providing a seamless travel experience by offering comprehensive visa assistance services. Whether you're planning a relaxing vacation, a business trip, or an adventurous getaway, our team is here to guide you through the visa application process.</p>

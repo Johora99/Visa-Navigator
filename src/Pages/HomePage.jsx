@@ -1,3 +1,4 @@
+import Assesment from "../components/Assesment";
 import Banner from "../components/Banner";
 import LatestVisas from "../components/LatestVisas";
 import OurDestination from "../components/OurDestination";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <LatestVisas></LatestVisas>
       <OurServices></OurServices>
       <OurDestination></OurDestination>
+      <Assesment></Assesment>
   
     </div>
   )

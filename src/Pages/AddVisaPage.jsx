@@ -1,7 +1,10 @@
 
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 export default function AddVisaPage() {
+  const {user} = useContext(AuthContext);
    const handleVisaApplication = (e)=>{
       e.preventDefault();
     const image = e.target.image.value;
@@ -17,9 +20,10 @@ export default function AddVisaPage() {
     const fee = e.target.fee.value;
     const validity = e.target.validity.value;
     const applicationMethod = e.target.method.value;
+    const email = user.email;
      const documents = [validPassport,visaApplicationForm,passportPhoto,nidCardPhotocopy]
     const allVisaData = {
-      image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod
+      image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod,email
     }
     fetch('http://localhost:5000/visaApplication',{
       method:'POST',
@@ -137,7 +141,7 @@ export default function AddVisaPage() {
         </div>
               <div>
             <label className='inline-block mb-2'>
-                <span className='text-base text-black font-medium'>Fee</span>
+                <span className='text-base text-black font-medium'>Fee ($)</span>
             </label><br />
             <input type="number" name="fee" id="" placeholder='Enter Your Fee' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3'/>
         </div>

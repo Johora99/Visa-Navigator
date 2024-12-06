@@ -51,7 +51,7 @@ export default function LogInPage() {
     }
   return (
    <div>
-        <div className='flex items-center justify-center mt-20'>
+        <div className='flex items-center justify-center my-20'>
 
     <div className='container w-11/12 mx-auto lg:w-[30%] py-10'>
         <h3 className='text-xl lg:text-4xl font-semibold'>Welcome<span className='text-Tangerine'>Back !</span></h3>
