@@ -18,7 +18,7 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
   confirmButtonText: "Yes Delete It"
 }).then((result) => {
   if (result.isConfirmed) {
-     fetch(`http://localhost:5000/myAppliedVisa/${id}`,{
+     fetch(`https://server-side-tawny.vercel.app/myAppliedVisa/byId/${id}`,{
         method:"DELETE",
      })
      .then(res=> res.json())

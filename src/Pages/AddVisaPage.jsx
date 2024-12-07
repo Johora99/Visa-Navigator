@@ -27,7 +27,7 @@ export default function AddVisaPage() {
     const allVisaData = {
       image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod,email
     }
-    fetch('http://localhost:5000/visaApplication',{
+    fetch('https://server-side-tawny.vercel.app/visaApplication',{
       method:'POST',
       headers:{
         'content-type':'application/json',

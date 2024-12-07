@@ -1,11 +1,13 @@
 import { useLoaderData, useNavigate } from "react-router-dom"
 import bgImg from '../assets/composition-cotton-airline-toy-jet_23-2148169868.png'
 import ModalBox from "../components/ModalBox";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 export default function VisaDetailsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const {user} = useContext(AuthContext)
   const currentDate = new Date().toLocaleDateString('en-CA');
   const navigate = useNavigate()
   const [details,setDetails] = useState({})
@@ -32,11 +34,12 @@ export default function VisaDetailsPage() {
 
    const closeModal = () => {
   const modal = document.getElementById(`${_id}`);
+  const email = user.email;
   const myVisa = {
-    details, currentDate
+    details, currentDate,email
   }
   setIsModalOpen(false);
-    fetch('http://localhost:5000/myAppliedVisa',{
+    fetch('https://server-side-tawny.vercel.app/myAppliedVisa',{
       method:'POST',
       headers:{
         'content-type':'application/json',

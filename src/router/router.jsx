@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/allVisa',
-        loader:()=>fetch('http://localhost:5000/visaApplication'),
+        loader:()=>fetch('https://server-side-tawny.vercel.app/visaApplication'),
         element:<AllVisaPage></AllVisaPage>
       },
       {
         path:'/visaApplication/:id',
-        loader:({params})=>fetch(`http://localhost:5000/visaApplication/byId/${params.id}`),
+        loader:({params})=>fetch(`https://server-side-tawny.vercel.app/visaApplication/byId/${params.id}`),
         element:<PrivatePage><VisaDetailsPage></VisaDetailsPage></PrivatePage>
       },
       {
@@ -49,7 +49,6 @@ const router = createBrowserRouter([
       },
       {
         path:'/myAppliedVisa',
-        loader:()=>fetch('http://localhost:5000/myAppliedVisa'),
         element:<PrivatePage><MyAppliedVisas></MyAppliedVisas></PrivatePage>
       }
     ]

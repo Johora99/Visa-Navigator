@@ -25,7 +25,7 @@ export default function UpdateModal({data,closeModal}) {
     const allVisaData = {
       image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod,email
     }
-    fetch(`http://localhost:5000/visaApplication/byEmail/${email}`,{
+    fetch(`https://server-side-tawny.vercel.app/visaApplication/byEmail/${email}`,{
       method:'PUT',
       headers:{
         'content-type':'application/json',

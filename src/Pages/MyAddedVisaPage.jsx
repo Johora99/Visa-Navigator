@@ -7,7 +7,7 @@ export default function MyAddedVisaPage() {
   const {user} = useContext(AuthContext);
   const [addedData,setAddedData] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/visaApplication/byEmail/${user.email}`)
+    fetch(`https://server-side-tawny.vercel.app/visaApplication/byEmail/${user.email}`)
     .then(res => res.json())
     .then(data => setAddedData(data) )
   },[])

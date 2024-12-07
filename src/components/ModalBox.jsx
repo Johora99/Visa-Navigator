@@ -15,7 +15,7 @@ export default function ModalBox({closeModal,details,cancelApply}) {
     const date = e.target.date.value;
     const fee = e.target.fee.value;
     const visaData = {fastName,lastName,email,date,fee}
-    fetch('http://localhost:5000/visaUser',{
+    fetch('https://server-side-tawny.vercel.app/visaUser',{
       method:'POST',
       headers:{
           'content-type':'application/json',
