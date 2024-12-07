@@ -31,7 +31,7 @@ export default function OurServices() {
         
         
              </div>
-        <div className='relative my-20 lg:mb-20'>
+        <div className='relative my-20 lg:my-0 lg:mb-20'>
             <div className='w-full overflow-hidden '>
               <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px]'>
                <img src={Img3} alt="" className='h-full object-cover w-full'/>
@@ -45,7 +45,7 @@ export default function OurServices() {
         
         
              </div>
-          <div className='relative my-20 lg:mb-20'>
+          <div className='relative my-20 lg:my-0 lg:mb-20'>
             <div className='w-full overflow-hidden '>
               <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px] w-full'>
                <img src={Img2} alt="" className='h-full object-cover w-full'/>

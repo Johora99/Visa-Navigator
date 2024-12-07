@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB0nnTceiJ0OImufSo4_e_gEBmtwBlHjLg",
-  authDomain: "visa-navigator-c69eb.firebaseapp.com",
-  projectId: "visa-navigator-c69eb",
-  storageBucket: "visa-navigator-c69eb.firebasestorage.app",
-  messagingSenderId: "172953321309",
-  appId: "1:172953321309:web:b9ce453617d1526511b2b4"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
