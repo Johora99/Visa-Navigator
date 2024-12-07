@@ -3,6 +3,7 @@ import bgImg from '../assets/composition-cotton-airline-toy-jet_23-2148169868.pn
 import ModalBox from "../components/ModalBox";
 import { useEffect, useState } from "react";
 
+
 export default function VisaDetailsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const currentDate = new Date().toLocaleDateString('en-CA');
@@ -49,19 +50,24 @@ export default function VisaDetailsPage() {
     navigate('/allVisa')
   }
 };
-
+ const cancelApply = ()=>{
+  const modal = document.getElementById(`${_id}`);
+    if (modal) {
+    modal.close();
+  }
+ }
 
   return (
     <div className="container w-11/12 mx-auto my-20" style={bgStyle}>
     <div className="bg-black bg-opacity-[0.3] p-10">
-      <div className="card glass w-[50%] ml-auto p-10">
+      <div className="card glass w-full lg:w-[50%] ml-auto p-10">
   <figure>
     <img
       src={image}
       alt="car!" className="rounded-xl "/>
   </figure>
   <div className="text-white">
-    <div className='mt-5  flex items-center justify-between gap-10'>
+    <div className='mt-5  flex flex-col lg:flex-row lg:items-center justify-between lg:gap-10'>
       <div>
         <p className='text-base  font-medium'>Country : {countryName}</p>
       <p className='text-base  font-medium my-2'>Visa Type : {visaType}</p>
@@ -81,9 +87,9 @@ export default function VisaDetailsPage() {
         <p>Age Restriction : {age}</p>
     </div>
     <div className="card-actions justify-center">
-      <button onClick={openModal} className="border-[1px] border-Tangerine py-3 px-5 text-white text-lg font-semibold mt-5">Apply for the visa</button>
+      <button onClick={openModal} className="border-[1px] border-Tangerine py-2 lg:py-3 px-5 text-white text-lg font-semibold mt-5">Apply for the visa</button>
     </div>
-    <ModalBox details={details} closeModal={closeModal}></ModalBox>
+    <ModalBox details={details} closeModal={closeModal} cancelApply={cancelApply}></ModalBox>
   </div>
 </div>
     </div>

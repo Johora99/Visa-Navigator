@@ -7,6 +7,7 @@ import { useContext } from "react";
 
 export default function MainLayOut() {
     const { isDarkMode} = useContext(ThemeContext);
+
   return (
     <div className={`lato ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
       <Navbar></Navbar>

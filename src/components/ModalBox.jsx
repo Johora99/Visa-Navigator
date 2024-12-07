@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
-export default function ModalBox({closeModal,details}) {
+import { RxCross1 } from "react-icons/rx";
+export default function ModalBox({closeModal,details,cancelApply}) {
   const {user} = useContext(AuthContext)
   console.log(user)
   const {_id,countryName,fee} = details;
@@ -38,7 +39,10 @@ export default function ModalBox({closeModal,details}) {
     <div>
 <dialog id={`${_id}`} className="modal">
   <div className="modal-box">
-    <h3 className='text-xl lg:text-4xl text-black font-semibold text-center mb-10'>Apply For <span className='text-Tangerine'> {countryName} </span>Visa</h3>
+    <div className="flex items-center justify-between mb-10">
+    <h3 className='text-xl lg:text-4xl text-black font-semibold '>Apply For <span className='text-Tangerine'> {countryName} </span>Visa</h3>
+    <div onClick={cancelApply}><RxCross1 className="text-Tangerine text-xl font-bold cursor-pointer"/></div>
+    </div>
    <form onSubmit={handleApplyVisa}>
       <div className="p-5">
         <div>

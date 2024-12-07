@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../AuthProvider/AuthProvider"
-import MyAddedVisa from "../components/MyaddedVisa";
 import bgImg from '../assets/pngtree-visualizing-the-tourism-and-travel-concept-booking-airline-tickets-online-with-image_13549510.png'
+import MyAddedVisa from "../components/MyAddedVisa";
 
 export default function MyAddedVisaPage() {
   const {user} = useContext(AuthContext);
@@ -21,6 +21,18 @@ export default function MyAddedVisaPage() {
     
   };
   return (
+    <div>
+      <div className="container w-11/12 mx-auto text-center my-10 lg:my-20">
+        <h2 className="text-4xl lg:text-7xl font-bold">My
+          <span className="text-Tangerine"> Added </span>  Visa
+        </h2>
+        <p className="text-base text-Gray font-medium mt-5">
+          Explore the most recent visa opportunities! Below are the All visa
+          options available for various countries.
+          <br className="hidden lg:block" />
+          Each visa card provides essential information.
+        </p>
+      </div>
      <div style={bgStyle}>
       <div className=" bg-black bg-opacity-[0.3]">
     <div className="container w-11/12 mx-auto mb-20">
@@ -32,6 +44,7 @@ export default function MyAddedVisaPage() {
     </div>
       </div>
      </div>
+    </div>
   
   )
 }

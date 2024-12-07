@@ -10,7 +10,7 @@ export default function LatestVisa({visa}) {
   <figure>
     <img
       src={image}
-      alt="Shoes" className='w-32 h-32 rounded-full object-cover'/>
+      alt="Shoes" className='w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover'/>
   </figure>
   <div className="">
     <div className='mt-5 text-center'>

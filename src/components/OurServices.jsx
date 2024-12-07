@@ -13,14 +13,14 @@ export default function OurServices() {
           <h4 className="text-Tangerine text-xl font-semibold">SERVICES</h4>
         <img src={starIcon} alt="" className='w-10'/>
       </div>
-        <h2 className="text-7xl font-bold leading-[100px] mb-20">Outstanding Immigration <br className='hidden lg:block'/>
+        <h2 className="text-4xl lg:text-7xl font-bold leading-[50px] lg:leading-[100px] mb-20">Outstanding Immigration <br className='hidden lg:block'/>
         <span className="text-Tangerine">Visa</span>  Services. </h2>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-20'>
           <div className='relative mb-20'>
             <div className='w-full overflow-hidden '>
-              <div className='hover:scale-150 transition-all duration-500 h-[400px]'>
-               <img src={Img1} alt="" className='h-full object-cover'/>
+              <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px]'>
+               <img src={Img1} alt="" className='h-full object-cover w-full'/>
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
@@ -31,10 +31,10 @@ export default function OurServices() {
         
         
              </div>
-        <div className='relative mb-20'>
+        <div className='relative my-20 lg:mb-20'>
             <div className='w-full overflow-hidden '>
-              <div className='hover:scale-150 transition-all duration-500 h-[400px]'>
-               <img src={Img3} alt="" className='h-full object-cover'/>
+              <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px]'>
+               <img src={Img3} alt="" className='h-full object-cover w-full'/>
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
@@ -45,10 +45,10 @@ export default function OurServices() {
         
         
              </div>
-          <div className='relative mb-20'>
+          <div className='relative my-20 lg:mb-20'>
             <div className='w-full overflow-hidden '>
-              <div className='hover:scale-150 transition-all duration-500 h-[400px]'>
-               <img src={Img2} alt="" className='h-full object-cover'/>
+              <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px] w-full'>
+               <img src={Img2} alt="" className='h-full object-cover w-full'/>
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
@@ -61,8 +61,8 @@ export default function OurServices() {
              </div>
           <div className='relative my-20'>
             <div className='w-full overflow-hidden '>
-              <div className='hover:scale-150 transition-all duration-500 h-[400px]'>
-               <img src={Img4} alt="" className='h-full object-cover'/>
+              <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px]'>
+               <img src={Img4} alt="" className='h-full object-cover w-full'/>
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
@@ -75,8 +75,8 @@ export default function OurServices() {
              </div>
           <div className='relative my-20'>
             <div className='w-full overflow-hidden '>
-              <div className='hover:scale-150 transition-all duration-500 h-[400px]'>
-               <img src={Img5} alt="" className='h-full object-cover'/>
+              <div className='hover:scale-150 transition-all duration-500 h-[300px] lg:h-[400px]'>
+               <img src={Img5} alt="" className='h-full object-cover w-full'/>
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>

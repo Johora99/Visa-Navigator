@@ -35,52 +35,52 @@ export default function Banner() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper w-full h-[400px] lg:h-[750px] transition-all ease-in-out relative"
+        className="mySwiper w-full h-[300px] lg:h-[750px] transition-all ease-in-out relative"
       >
         <div className='absolute bg-Tangerine w-full h-full left-0 z-[10]'>
 
         <SwiperSlide>
           <div className='relative'>
-                <img src={Img1} alt="" className='absolute w-full  h-[400px] lg:h-[750px] object-cover'/>
-                <div className='absolute left-0 z-[10] pt-20 pl-20'>
-                <h2 className='text-7xl text-white font-extrabold  leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <img src={Img1} alt="" className='absolute w-full  h-[300px] lg:h-[750px] object-cover'/>
+                <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
+                <h2 className='text-3xl lg:text-7xl text-white font-extrabold  lg:leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 lg:py-3 px-5 lg:px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className='relative'>
                 <img src={Img2} alt="" className='absolute w-full  h-[400px] lg:h-[750px] object-cover'/>
-                <div className='absolute right-0 z-[10] pt-20 pr-20'>
-                <h2 className='text-7xl text-white font-extrabold leading-[100px]'>Trusted Immigration <br /> Visa Consulting <br /> Here ...</h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <div className='absolute right-0 z-[10] pt-10 pr-10 lg:pt-20 lg:pr-20'>
+                <h2 className='text-3xl lg:text-7xl text-white font-extrabold lg:leading-[100px]'>Trusted Immigration <br /> Visa Consulting <br /> Here ...</h2>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
         <div className='relative'>
                 <img src={Img4} alt="" className='absolute w-full  h-[400px] lg:h-[750px] object-cover'/>
-                <div className='absolute left-0 z-[10] pt-20 pl-20'>
-                <h2 className='text-7xl text-white font-extrabold leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
+                <h2 className='text-3xl lg:text-7xl text-white font-extrabold lg:leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>
         <SwiperSlide>
         <div className='relative'>
                 <img src={Img5} alt="" className='absolute w-full  h-[400px] lg:h-[750px] object-cover'/>
-                <div className='absolute left-0 z-[10] pt-20 pl-20'>
-                <h2 className='text-7xl text-white font-extrabold  leading-[100px]'>Trusted Immigration <br /> Visa Consulting <br /> Here ...</h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
+                <h2 className='text-3xl lg:text-7xl text-white font-extrabold  lg:leading-[100px]'>Trusted Immigration <br /> Visa Consulting <br /> Here ...</h2>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>
         <SwiperSlide>
         <div className='relative'>
                 <img src={Img6} alt="" className='absolute w-full  h-[400px] lg:h-[750px] object-cover'/>
-                <div className='absolute left-0 z-[10] pt-20 pl-20'>
-                <h2 className='text-7xl text-white font-extrabold  leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
+                <h2 className='text-3xl lg:text-7xl text-white font-extrabold  lg:leading-[100px]'>Visa Immigration <br /> For A Brighter <br /> You Future ...</h2>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>

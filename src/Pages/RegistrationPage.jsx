@@ -5,7 +5,9 @@ import { IoEyeOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import gImg from '../assets/icons8-google-48.png'
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { ThemeContext } from "./ThemeProvider";
 export default function RegistrationPage() {
+    const { isDarkMode} = useContext(ThemeContext);
   const navigate = useNavigate();
     const {creatUser,googleSignIn,userUpdateProfile} = useContext(AuthContext);
     const [showPassword,setShowPassword] = useState(false);
@@ -80,27 +82,27 @@ export default function RegistrationPage() {
        <form onSubmit={handleCreatUser}>
         <div>
             <label>
-                <span className='text-base inline-block mb-2 text-black font-medium'>Name</span>
+                <span className={`text-base text-black font-medium inline-block mb-2 ${isDarkMode ? " text-white " : " text-black"}`}>Name</span>
             </label><br />
-            <input type="text" name="name" id="" placeholder='Enter your name' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal  px-2.5 py-2'/>
+            <input type="text" name="name" id="" placeholder='Enter your name' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
         </div>
         <div>
             <label className='mb-2'>
-                <span className='text-base inline-block mb-2 text-black font-medium'>Email address</span>
+                <span className={`text-base text-black font-medium inline-block mb-2 ${isDarkMode ? " text-white " : " text-black"}`}>Email address</span>
             </label><br />
-            <input type="email" name="email" id="" placeholder='Enter your email' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal  px-2.5 py-2'/>
+            <input type="email" name="email" id="" placeholder='Enter your email' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
         </div>
         <div>
             <label className='mb-2'>
-                <span className='text-base inline-block mb-2 text-black font-medium'>Photo URL</span>
+                <span className={`text-base text-black font-medium inline-block mb-2 ${isDarkMode ? " text-white " : " text-black"}`}>Photo URL</span>
             </label><br />
-            <input type="url" name="photoUrl" id="" placeholder='Enter your Photo URL' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal  px-2.5 py-2'/>
+            <input type="url" name="photoUrl" id="" placeholder='Enter your Photo URL' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
         </div>
         <div className='relative'>
             <label className='mb-2'>
-                <span className='text-base inline-block mb-2 text-black font-medium'>Password</span>
+                <span className={`text-base text-black font-medium inline-block mb-2 ${isDarkMode ? " text-white " : " text-black"}`}>Password</span>
             </label><br />
-           <input type={showPassword ? 'text':'password'} name="password" id="" placeholder='Enter your password' className='w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-2'/>
+           <input type={showPassword ? 'text':'password'} name="password" id="" placeholder='Enter your password' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
               <span onClick={()=>setShowPassword(!showPassword)} className='absolute right-3 top-1/2 cursor-pointer'>
                 {
                     showPassword? <IoEyeOutline />:<IoEyeOffOutline className=' text-LightGray'/> 
@@ -117,7 +119,7 @@ export default function RegistrationPage() {
         <div className="form-control">
            <label className="label cursor-pointer justify-start gap-2">
           <input type="checkbox" name='check' className="checkbox w-4 h-4" />
-          <span className="label-text text-base text-black font-medium">I agree to the <Link className='underline decoration-Tangerine'>terms & policy</Link></span>
+          <span className={`label-text text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>I agree to the <Link className='underline decoration-Tangerine'>terms & policy</Link></span>
           </label>
           <div>
                     {
@@ -136,14 +138,14 @@ export default function RegistrationPage() {
                 
             </div>
        </form>
-           <div className="divider my-10">OR</div>
+            <div className={`border-b-[2px] my-10 ${isDarkMode ? " text-white border-Tangerine" : " text-black"}`}></div>
             <div>
                <button onClick={handleGoogleSignIn} className='flex items-center gap-2 rounded-xl border-[1px] border-LightGray w-fit px-2.5 py-2'> <img src={gImg} alt="" className='w-5'/>
-                <p className='text-base text-black font-medium'>Sign In With Google</p>
+                <p className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Sign In With Google</p>
                 </button>
             </div>
             <div className='text-center my-5'>
-                <p className='text-base text-black font-medium'>Have an account ? <Link to='/logIn' className='text-Tangerine hover:underline hover:decoration-Tangerine'>Sign In</Link></p>
+                <p className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Have an account ? <Link to='/logIn' className='text-Tangerine hover:underline hover:decoration-Tangerine'>Sign In</Link></p>
             </div> 
     </div>
         </div>

@@ -13,9 +13,9 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
   text: "You won't be able to revert this!",
   icon: "warning",
   showCancelButton: true,
-  confirmButtonColor: "#3085d6",
+  confirmButtonColor: "rgb(255, 119, 41)",
   cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
+  confirmButtonText: "Yes Delete It"
 }).then((result) => {
   if (result.isConfirmed) {
      fetch(`http://localhost:5000/myAppliedVisa/${id}`,{

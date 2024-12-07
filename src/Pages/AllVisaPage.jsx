@@ -1,9 +1,11 @@
 
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import LatestVisa from "../components/LatestVisa";
+import { ThemeContext } from "./ThemeProvider";
 
 export default function AllVisaPage() {
+  const { isDarkMode} = useContext(ThemeContext);
   const data = useLoaderData(); 
   const [selectedVisaType, setSelectedVisaType] = useState("All Visa");
 
@@ -18,7 +20,7 @@ export default function AllVisaPage() {
   return (
     <div className="container w-11/12 mx-auto">
       <div className="text-center mt-20">
-        <h2 className="text-7xl font-bold">
+        <h2 className="text-4xl lg:text-7xl font-bold">
           <span className="text-Tangerine">All</span> Visa
         </h2>
         <p className="text-base text-Gray font-medium mt-5">
@@ -30,7 +32,7 @@ export default function AllVisaPage() {
         <div className="w-[30%] border-b-[2px] border-Tangerine mx-auto mt-5"></div>
         <div className="mt-20">
           <select
-            className="select select-bordered border-Tangerine rounded-xl mb-5 text-base"
+            className={`select select-bordered border-Tangerine rounded-xl mb-5 text-base focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}
             name="visaType"
             value={selectedVisaType}
             onChange={handleFilterChange}

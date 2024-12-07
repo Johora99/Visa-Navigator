@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
-
-export default function UpdateModal({data,closeModal,setAddedData,addedData}) {
+import { RxCross1 } from "react-icons/rx";
+export default function UpdateModal({data,closeModal}) {
     const {user} = useContext(AuthContext);
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = data;
     const handleUpdate = (e)=>{
@@ -40,7 +40,7 @@ export default function UpdateModal({data,closeModal,setAddedData,addedData}) {
      text: "That thing is still around?",
      icon: "success"
 });
-    // setAddedData(allVisaData)
+    
     
     })
     }
@@ -48,6 +48,10 @@ export default function UpdateModal({data,closeModal,setAddedData,addedData}) {
     <div>
 <dialog id={`${_id}`} className="modal">
   <div className="modal-box text-black">
+    <div className="flex items-center justify-between">
+      <h3>Update</h3>
+        <div onClick={closeModal}><RxCross1 className="text-Tangerine text-xl font-bold cursor-pointer"/></div>
+    </div>
   <form onSubmit={handleUpdate}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div>
