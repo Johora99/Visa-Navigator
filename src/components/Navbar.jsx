@@ -4,6 +4,10 @@ import logo from '../assets/icons8-world-50.png'
 import { useContext } from 'react'
 import { AuthContext } from '../AuthProvider/AuthProvider'
 import { ThemeContext } from '../Pages/ThemeProvider';
+
+import { Tooltip as ReactTooltip } from 'react-tooltip';
+
+
 export default function Navbar() {
   const {user,signOutUser } = useContext(AuthContext);
   const {toggleTheme} = useContext(ThemeContext)
@@ -27,6 +31,7 @@ export default function Navbar() {
         <NavLink to='/myAddedVisa'><a>My added visas</a></NavLink>
         <NavLink to='/myAppliedVisa'><a>My Visa applications</a></NavLink>
     </ul>
+    
   </div>
   <div className="navbar-end">
     <div className='hidden lg:block'>
@@ -34,9 +39,25 @@ export default function Navbar() {
             {
               user ? <Link onClick={signOutUser} to='/' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
             }
-             {
-              user ? <img src={user?.photoURL} alt="" className='w-12 h-12 rounded-full cursor-pointer' title={user?.displayName}/>:<Link to='/register' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
-             }
+            {user ? (
+        <>
+          <img
+            src={user?.photoURL}
+            alt="User"
+            className="w-12 h-12 rounded-full cursor-pointer"
+            data-tooltip-id="profile-tooltip"
+            data-tooltip-content={user?.displayName}
+          />
+          <ReactTooltip id="profile-tooltip" place="left-end" effect="solid" />
+        </>
+      ) : (
+        <Link
+          to="/register"
+          className="text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5"
+        >
+          Register
+        </Link>
+      )}
 
              <label className="swap swap-rotate">
 
