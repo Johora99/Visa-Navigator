@@ -20,6 +20,9 @@ export default function MyAddedVisaPage() {
   
     
   };
+      useEffect(() => {
+    document.title = "Visa Navigator || My Added Visa Page";
+  }, []);
   return (
     <div>
       <div className="container w-11/12 mx-auto text-center my-10 lg:my-20">

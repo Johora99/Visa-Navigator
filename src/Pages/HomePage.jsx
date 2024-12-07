@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Assesment from "../components/Assesment";
 import Banner from "../components/Banner";
 import LatestVisas from "../components/LatestVisas";
@@ -8,7 +9,9 @@ import OurServices from "../components/OurServices";
 
 
 export default function HomePage() {
-  
+  useEffect(() => {
+    document.title = "Visa Navigator || Home Page";
+  }, []);
   return (
     <div>
       <Banner></Banner>

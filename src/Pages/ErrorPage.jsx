@@ -1,12 +1,14 @@
 
 import { useEffect } from 'react'
-import { useRouteError } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom'
 
 export default function () {
+
     const error = useRouteError()
      useEffect(() => {
     document.title = "Error";
   }, []);
+
   return (
     <div className="w-full h-screen flex">
       <div className="m-auto text-center">
@@ -17,7 +19,8 @@ export default function () {
           {
             error.statusText || error.message
           }
-        </i>
+        </i> <br />
+        <Link to='/' className='text-xl font-semibold border-[2px] border-black py-2 px-10 inline-block mt-10'>Go Back</Link>
       </div>
           
     </div>

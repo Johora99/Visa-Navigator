@@ -1,7 +1,7 @@
 
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import gImg from '../assets/icons8-google-48.png'
-import { useContext, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { IoEyeOffOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { AuthContext } from '../AuthProvider/AuthProvider.jsx';
@@ -51,6 +51,9 @@ export default function LogInPage() {
             console.log(err)
         })
     }
+    useEffect(() => {
+    document.title = "Visa Navigator || Login Page";
+  }, []);
   return (
    <div>
         <div className='flex items-center justify-center my-20'>

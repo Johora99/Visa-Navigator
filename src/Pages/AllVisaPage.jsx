@@ -1,6 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LatestVisa from "../components/LatestVisa";
 import { ThemeContext } from "./ThemeProvider";
 
@@ -16,7 +16,9 @@ export default function AllVisaPage() {
   const handleFilterChange = (e) => {
     setSelectedVisaType(e.target.value);
   };
-
+useEffect(() => {
+    document.title = "Visa Navigator || All Visa";
+  }, []);
   return (
     <div className="container w-11/12 mx-auto">
       <div className="text-center mt-20">

@@ -56,7 +56,9 @@ export default function VisaDetailsPage() {
     modal.close();
   }
  }
-
+    useEffect(() => {
+    document.title = "Visa Navigator || Visa Details Page";
+  }, []);
   return (
     <div className="container w-11/12 mx-auto my-20" style={bgStyle}>
     <div className="bg-black bg-opacity-[0.3] p-10">

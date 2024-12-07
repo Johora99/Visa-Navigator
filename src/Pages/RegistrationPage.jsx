@@ -73,6 +73,9 @@ export default function RegistrationPage() {
             console.log(err);
         })
     }
+        useEffect(() => {
+    document.title = "Visa Navigator || Registration Page";
+  }, []);
   return (
   <div>
         <div>

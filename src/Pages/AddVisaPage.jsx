@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { ThemeContext } from './ThemeProvider';
@@ -49,8 +49,11 @@ export default function AddVisaPage() {
 
 
 
-    console.log(allVisaData)
+    
    }
+   useEffect(() => {
+    document.title = "Visa Navigator || Add Visa page";
+  }, []);
   return (
      <div>
         <div className='flex items-center justify-center mt-10'>

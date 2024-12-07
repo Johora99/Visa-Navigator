@@ -26,7 +26,9 @@ export default function MyAppliedVisas() {
     );
     setVisaData(filteredData);
   };
-
+       useEffect(() => {
+    document.title = "Visa Navigator || My Applied Visa Page";
+  }, []);
   return (
     <div>
   <div className="text-center my-20">
