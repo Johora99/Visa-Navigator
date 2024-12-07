@@ -30,3 +30,17 @@
       justify-content: center;
       height: 100%;
     }
+
+
+    
+    /* Light theme (default) */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #1a1a1a;
+  color: white;
+}

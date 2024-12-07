@@ -26,7 +26,7 @@ export default function MyAddedVisaPage() {
     <div className="container w-11/12 mx-auto mb-20">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5">
          {
-          addedData.map(data => <MyAddedVisa key={data._id} data={data}></MyAddedVisa>)
+          addedData.map(data => <MyAddedVisa key={data._id} data={data} setAddedData={setAddedData} addedData={addedData}></MyAddedVisa>)
          }
       </div>
     </div>

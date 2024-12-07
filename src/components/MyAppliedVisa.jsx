@@ -1,9 +1,43 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-export default function MyAppliedVisa({myVisa}) {
+import Swal from "sweetalert2";
+export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
     const {user} = useContext(AuthContext)
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = myVisa.details;
+
+
+  const handleVisaCancel = (id) => {
+       Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+     fetch(`http://localhost:5000/myAppliedVisa/${id}`,{
+        method:"DELETE",
+     })
+     .then(res=> res.json())
+     .then(data => 
+     {
+      Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+    const remainingVisa = visaData.filter(visa => visa._id !== myVisa._id);
+    setVisaData(remainingVisa);
+     }
+     )
+   
+  }
+});
+};
+
   return (
     <div>
       <div className="bg-Tangerine bg-opacity-[0.5] rounded-xl">
@@ -27,7 +61,7 @@ export default function MyAppliedVisa({myVisa}) {
                   </div>
               </div>
               <div>
-                <button className="text-white border-[1px] border-Tangerine py-2 px-5 font-semibold mt-5">Cancel</button>
+                <button onClick={() => handleVisaCancel(myVisa._id)} className="text-white border-[1px] border-Tangerine py-2 px-5 font-semibold mt-5">Cancel</button>
               </div>
               </div>
             </div>
