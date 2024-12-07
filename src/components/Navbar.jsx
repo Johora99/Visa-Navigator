@@ -25,11 +25,11 @@ export default function Navbar() {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-6 *:text-lg *:font-medium">
-        <NavLink to='/'><a>Home</a></NavLink>
-        <NavLink to='/allVisa'><a>All visas</a></NavLink>
-        <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
-        <NavLink to='/myAddedVisa'><a>My added visas</a></NavLink>
-        <NavLink to='/myAppliedVisa'><a>My Visa applications</a></NavLink>
+        <NavLink to='/'  className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>Home</a></NavLink>
+        <NavLink to='/allVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>All visas</a></NavLink>
+        <NavLink to='/addVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>Add Visa</a></NavLink>
+        <NavLink to='/myAddedVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>My added visas</a></NavLink>
+        <NavLink to='/myAppliedVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>My Visa applications</a></NavLink>
     </ul>
     
   </div>

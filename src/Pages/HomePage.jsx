@@ -8,6 +8,7 @@ import OurServices from "../components/OurServices";
 
 
 
+
 export default function HomePage() {
   useEffect(() => {
     document.title = "Visa Navigator || Home Page";
@@ -19,7 +20,6 @@ export default function HomePage() {
       <OurServices></OurServices>
       <OurDestination></OurDestination>
       <Assesment></Assesment>
-  
     </div>
   )
 }
