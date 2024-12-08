@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import { RxCross1 } from "react-icons/rx";
-export default function UpdateModal({data,closeModal}) {
+export default function UpdateModal({data,closeModal,addedData,setAddedData}) {
     const {user} = useContext(AuthContext);
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = data;
     const handleUpdate = (e)=>{
@@ -40,7 +40,7 @@ export default function UpdateModal({data,closeModal}) {
      text: "That thing is still around?",
      icon: "success"
 });
-    
+    setAddedData([allVisaData])
     
     })
     }

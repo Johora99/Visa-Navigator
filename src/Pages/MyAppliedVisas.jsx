@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+
 import MyAppliedVisa from "../components/MyAppliedVisa";
 import bgImg from "../assets/bg-img.jpg";
 import { useContext, useEffect, useState } from "react";
@@ -9,19 +9,18 @@ export default function MyAppliedVisas() {
   const [visaData, setVisaData] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); 
   useEffect(() => {
-    fetch(`https://server-side-tawny.vercel.app/myAppliedVisa/byEmail/${user.email}`)
+    fetch(`https://server-side-tawny.vercel.app/visaUser/byEmail/${user.email}`)
     .then(res => res.json())
     .then(data =>setVisaData(data))
     
   }, []);
-
+   console.log(visaData)
   const bgStyle = {
     backgroundImage: `url(${bgImg})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   };
-
 
   const handleSearch = () => {
     const filteredData = data.filter((visa) =>

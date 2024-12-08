@@ -15,12 +15,15 @@ export default function ModalBox({closeModal,details,cancelApply}) {
     const date = e.target.date.value;
     const fee = e.target.fee.value;
     const visaData = {fastName,lastName,email,date,fee}
+    const userVisaData = {
+        visaData,details
+    }
     fetch('https://server-side-tawny.vercel.app/visaUser',{
       method:'POST',
       headers:{
           'content-type':'application/json',
       },
-      body:JSON.stringify(visaData)
+      body:JSON.stringify(userVisaData)
     })
     .then(res => res.json())
       .then(data => {

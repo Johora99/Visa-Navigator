@@ -1,5 +1,5 @@
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import AOS from 'aos';
@@ -8,7 +8,7 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
     const {user} = useContext(AuthContext)
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = myVisa.details;
 
-
+   console.log(myVisa.visaData)
   const handleVisaCancel = (id) => {
        Swal.fire({
   title: "Are you sure?",
@@ -20,21 +20,22 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
   confirmButtonText: "Yes Delete It"
 }).then((result) => {
   if (result.isConfirmed) {
-     fetch(`https://server-side-tawny.vercel.app/myAppliedVisa/byId/${id}`,{
+     fetch(`https://server-side-tawny.vercel.app/visaUser/byId/${id}`,{
         method:"DELETE",
      })
      .then(res=> res.json())
      .then(data => 
-     {
-      Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
-      icon: "success"
-    });
-    const remainingVisa = visaData.filter(visa => visa._id !== myVisa._id);
-    setVisaData(remainingVisa);
-     }
-     )
+      {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+        const remainingVisa = visaData.filter(visa => visa._id !== myVisa._id);
+        setVisaData(remainingVisa);
+        
+      }
+    )
    
   }
 });
@@ -63,7 +64,7 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
                   <div>
                 <p className="my-1">Application Method : {applicationMethod}</p>
                 <p>Applied Date : {myVisa.currentDate} </p>
-                <p className="my-1">Applicant's Name : {user?.displayName}</p>
+                <p className="my-1">Applicant's Name : {myVisa.visaData.fastName}  {myVisa.visaData.lastName}</p>
                 <p>Applicant’s Email : {user?.email}</p>
                   </div>
                   </div>

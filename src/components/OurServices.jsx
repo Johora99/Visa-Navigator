@@ -18,7 +18,7 @@ export default function OurServices() {
     });
 
   return (
-    <div className="container w-11/12 mx-auto">
+    <div className="container w-11/12 mx-auto ">
       <div className="text-center">
       <div className='flex items-center justify-center gap-3'>
         <img src={starIcon} alt="" className='w-10'/>

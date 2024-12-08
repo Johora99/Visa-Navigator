@@ -34,8 +34,10 @@ export default function OurDestination() {
           <h4 data-aos="zoom-in" className="text-Tangerine text-xl font-semibold uppercase">Our Destinations</h4>
         <img src={starIcon} alt="" className='w-10'/>
       </div>
+      <div className='px-5'>
         <h2 data-aos="zoom-in" className="text-4xl lg:text-7xl font-bold leading-[50x] lg:leading-[100px] mb-20">Visa Services for These  <br className='hidden lg:block'/>
         <span className="text-Tangerine">Destinations</span></h2>
+      </div>
       </div>
     <div className='w-full my-20 hidden lg:block' style={bgStyle}>
        <div className='container w-11/12 mx-auto relative'>

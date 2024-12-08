@@ -13,7 +13,7 @@ export default function LatestVisa({visa}) {
 
   return (
     <div data-aos="flip-left">
-      <div className="card bg-Tangerine bg-opacity-[0.1] shadow-xl p-10 h-full hover:transform hover:scale-125 transition-all duration-300 z-[10]">
+      <div className="card bg-Tangerine bg-opacity-[0.1] shadow-xl p-5 lg:p-10 h-full lg:hover:transform lg:hover:scale-125 transition-all duration-300 z-[10]">
         <div className='bg-Tangerine p-5 bg-opacity-10'>
   <figure>
     <img
