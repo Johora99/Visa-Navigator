@@ -21,6 +21,8 @@ export default function Banner() {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+    
+
   return (
     
 
@@ -46,7 +48,7 @@ export default function Banner() {
                 <img src={Img1} alt="" className='absolute w-full  h-[300px] lg:h-[750px] object-cover'/>
                 <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
               <h2 className='text-3xl lg:text-7xl text-white font-extrabold lg:leading-[100px]'>
-  <span style={{ display: 'block' }}>
+  <span  style={{ display: 'block' }}>
     <Typewriter
       words={["Visa Immigration"]}
       loop={true}
@@ -80,7 +82,7 @@ export default function Banner() {
   </span>
 </h2>
 
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 lg:py-3 px-5 lg:px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 lg:py-3 px-5 lg:px-8 flex items-center gap-2 mt-5 lg:mt-10 hover:bg-transparent hover:border-[2px] hover:border-Tangerine'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
         </SwiperSlide>
@@ -122,7 +124,7 @@ export default function Banner() {
     />
   </span>
                     </h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10 hover:bg-transparent hover:border-[2px] hover:border-Tangerine'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
         </SwiperSlide>
@@ -164,7 +166,7 @@ export default function Banner() {
     />
   </span>
                    </h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10 hover:bg-transparent hover:border-[2px] hover:border-Tangerine'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>
@@ -204,7 +206,7 @@ export default function Banner() {
       delaySpeed={1000}
     />
   </span></h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10 hover:bg-transparent hover:border-[2px] hover:border-Tangerine'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>
@@ -244,7 +246,7 @@ export default function Banner() {
       delaySpeed={1000}
     />
   </span></h2>
-                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
+                <button className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-3 px-8 flex items-center gap-2 mt-5 lg:mt-10 hover:bg-transparent hover:border-[2px] hover:border-Tangerine'>Learn More <IoArrowForwardCircleOutline className='text-2xl'/></button>
                 </div>
           </div>
           </SwiperSlide>

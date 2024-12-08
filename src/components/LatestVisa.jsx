@@ -1,12 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function LatestVisa({visa}) {
  const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = visa;
- 
+     AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
-    <div>
-      <div className="card bg-Tangerine bg-opacity-[0.1] shadow-xl p-10 h-full">
+    <div data-aos="flip-left">
+      <div className="card bg-Tangerine bg-opacity-[0.1] shadow-xl p-10 h-full hover:transform hover:scale-125 transition-all duration-300 z-[10]">
+        <div className='bg-Tangerine p-5 bg-opacity-10'>
   <figure>
     <img
       src={image}
@@ -21,10 +29,11 @@ export default function LatestVisa({visa}) {
       <p className='text-base text-Gray font-medium'>Validity : {validity}</p>
       <p className='text-base text-Gray font-medium my-2'>Application Method : {applicationMethod}</p>
     </div>
-    <div className="card-actions justify-center">
-      <Link to={`/visaApplication/${_id}`} className="text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-2 px-5 mt-5">See Details</Link>
+    <div data-aos="zoom-in" className="card-actions justify-center">
+      <Link to={`/visaApplication/${_id}`} className="text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-2 px-5 mt-5 hover:text-white hover:bg-Tangerine">See Details</Link>
     </div>
   </div>
+        </div>
 </div>
     </div>
   )

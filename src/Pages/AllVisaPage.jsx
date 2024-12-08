@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import LatestVisa from "../components/LatestVisa";
 import { ThemeContext } from "./ThemeProvider";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function AllVisaPage() {
   const { isDarkMode} = useContext(ThemeContext);
   const data = useLoaderData(); 
@@ -19,13 +20,20 @@ export default function AllVisaPage() {
 useEffect(() => {
     document.title = "Visa Navigator || All Visa";
   }, []);
+      AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
     <div className="container w-11/12 mx-auto">
       <div className="text-center mt-20">
-        <h2 className="text-4xl lg:text-7xl font-bold">
+        <h2 data-aos="zoom-in" className="text-4xl lg:text-7xl font-bold">
           <span className="text-Tangerine">All</span> Visa
         </h2>
-        <p className="text-base text-Gray font-medium mt-5">
+        <p data-aos="zoom-in" className="text-base text-Gray font-medium mt-5">
           Explore the most recent visa opportunities! Below are the All visa
           options available for various countries.
           <br className="hidden lg:block" />

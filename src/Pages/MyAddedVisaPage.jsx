@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../AuthProvider/AuthProvider"
 import bgImg from '../assets/pngtree-visualizing-the-tourism-and-travel-concept-booking-airline-tickets-online-with-image_13549510.png'
 import MyAddedVisa from "../components/MyAddedVisa";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function MyAddedVisaPage() {
   const {user} = useContext(AuthContext);
   const [addedData,setAddedData] = useState([])
@@ -23,13 +24,20 @@ export default function MyAddedVisaPage() {
       useEffect(() => {
     document.title = "Visa Navigator || My Added Visa Page";
   }, []);
+      AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
     <div>
       <div className="container w-11/12 mx-auto text-center my-10 lg:my-20">
-        <h2 className="text-4xl lg:text-7xl font-bold">My
+        <h2 data-aos="zoom-in" className="text-4xl lg:text-7xl font-bold">My
           <span className="text-Tangerine"> Added </span>  Visa
         </h2>
-        <p className="text-base text-Gray font-medium mt-5">
+        <p data-aos="zoom-in" className="text-base text-Gray font-medium mt-5">
           Explore the most recent visa opportunities! Below are the All visa
           options available for various countries.
           <br className="hidden lg:block" />

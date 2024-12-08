@@ -3,7 +3,8 @@ import bgImg from '../assets/composition-cotton-airline-toy-jet_23-2148169868.pn
 import ModalBox from "../components/ModalBox";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function VisaDetailsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,10 +63,17 @@ export default function VisaDetailsPage() {
     useEffect(() => {
     document.title = "Visa Navigator || Visa Details Page";
   }, []);
+      AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
     <div className="container w-11/12 mx-auto my-20" style={bgStyle}>
     <div className="bg-black bg-opacity-[0.3] p-10">
-      <div className="card glass w-full lg:w-[50%] ml-auto p-10">
+      <div data-aos="zoom-in" className="card glass w-full lg:w-[50%] ml-auto p-10">
   <figure>
     <img
       src={image}
@@ -91,7 +99,7 @@ export default function VisaDetailsPage() {
         <p>Description : {description}</p>
         <p>Age Restriction : {age}</p>
     </div>
-    <div className="card-actions justify-center">
+    <div data-aos="zoom-in" className="card-actions justify-center">
       <button onClick={openModal} className="border-[1px] border-Tangerine py-2 lg:py-3 px-5 text-white text-lg font-semibold mt-5">Apply for the visa</button>
     </div>
     <ModalBox details={details} closeModal={closeModal} cancelApply={cancelApply}></ModalBox>

@@ -2,6 +2,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
     const {user} = useContext(AuthContext)
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = myVisa.details;
@@ -37,10 +39,16 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
   }
 });
 };
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
 
   return (
     <div>
-      <div className="bg-Tangerine bg-opacity-[0.5] rounded-xl">
+      <div data-aos="zoom-in" className="bg-Tangerine bg-opacity-[0.5] rounded-xl">
               <div className=' w-full bg-black bg-opacity-[0.3] p-5'>
               <div className="text-white text-lg">
                   <img src={image} alt="" className="w-14 h-14 rounded-full" />

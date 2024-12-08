@@ -44,3 +44,7 @@ body.dark {
   background-color: #1a1a1a;
   color: white;
 }
+
+.btn:hover{
+  background: transparent;
+}

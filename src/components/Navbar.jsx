@@ -11,6 +11,7 @@ import { Tooltip as ReactTooltip } from 'react-tooltip';
 export default function Navbar() {
   const {user,signOutUser } = useContext(AuthContext);
   const {toggleTheme} = useContext(ThemeContext)
+    const { isDarkMode} = useContext(ThemeContext);
   return (
     <div className="w-full">
       <div>
@@ -37,7 +38,7 @@ export default function Navbar() {
     <div className='hidden lg:block'>
     <div className='flex items-center gap-3'>
             {
-              user ? <Link onClick={signOutUser} to='/' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
+              user ? <Link onClick={signOutUser} to='/' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
             }
             {user ? (
         <>
@@ -53,7 +54,7 @@ export default function Navbar() {
       ) : (
         <Link
           to="/register"
-          className="text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5"
+        className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}
         >
           Register
         </Link>
@@ -141,10 +142,10 @@ export default function Navbar() {
        <div className='lg:hidden'>
           <div className='flex items-center justify-center gap-3 mb-5'>
             {
-              user ? <Link onClick={signOutUser} to='/' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
+              user ? <Link onClick={signOutUser} to='/' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log Out</Link> : <Link to='/logIn' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log In</Link>
             }
              {
-              user ? <img src={user?.photoURL} alt="" className='w-12 h-12 rounded-full cursor-pointer' title={user?.displayName}/>:<Link to='/register' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-5'>Register</Link>
+              user ? <img src={user?.photoURL} alt="" className='w-12 h-12 rounded-full cursor-pointer' title={user?.displayName}/>:<Link to='/register' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Register</Link>
              }
     </div>
        </div>

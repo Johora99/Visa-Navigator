@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import UpdateModal from "./UpdateModal";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function MyAddedVisa({data,setAddedData,addedData}) {
   const {user} = useContext(AuthContext)
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,8 +52,15 @@ export default function MyAddedVisa({data,setAddedData,addedData}) {
 });
     
    }
+       AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
-    <div className="flex flex-col lg:flex-row gap-10 bg-Tangerine bg-opacity-[0.3] p-5 text-base text-white font-xl">
+    <div data-aos="zoom-in" className="flex flex-col lg:flex-row gap-10 bg-Tangerine bg-opacity-[0.3] p-5 text-base text-white font-xl">
 
        <div>
         <img src={image} alt="" className="w-32 "/>

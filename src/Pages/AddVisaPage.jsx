@@ -3,7 +3,8 @@ import { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { ThemeContext } from './ThemeProvider';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function AddVisaPage() {
   const { isDarkMode} = useContext(ThemeContext);
   const {user} = useContext(AuthContext);
@@ -46,19 +47,22 @@ export default function AddVisaPage() {
     })
 
       e.target.reset()
-
-
-
-    
    }
    useEffect(() => {
     document.title = "Visa Navigator || Add Visa page";
   }, []);
+      AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+
   return (
      <div>
         <div className='flex items-center justify-center mt-10'>
 
-    <div className='container w-11/12 mx-auto lg:w-[30%] py-10'>
+    <div data-aos="zoom-in-down" className='container w-11/12 mx-auto lg:w-[30%] py-10 lg:mb-20'>
         <h3 className='text-xl lg:text-4xl font-semibold'>Welcome<span className='text-Tangerine'>Back !</span></h3>
         <p className={`text-xl text-black font-medium mb-10 ${isDarkMode ? " text-white " : " text-black"}`}>Enter your Credentials to access your account</p>
        <form onSubmit={handleVisaApplication}>
