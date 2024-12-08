@@ -8,8 +8,9 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
     const {user} = useContext(AuthContext)
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = myVisa.details;
 
-   console.log(myVisa.visaData)
+
   const handleVisaCancel = (id) => {
+     console.log(id)
        Swal.fire({
   title: "Are you sure?",
   text: "You won't be able to revert this!",
@@ -33,7 +34,7 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
         });
         const remainingVisa = visaData.filter(visa => visa._id !== myVisa._id);
         setVisaData(remainingVisa);
-        
+        console.log(data)
       }
     )
    
@@ -63,7 +64,7 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
                   </div>
                   <div>
                 <p className="my-1">Application Method : {applicationMethod}</p>
-                <p>Applied Date : {myVisa.currentDate} </p>
+                <p>Applied Date : {myVisa.visaData.date} </p>
                 <p className="my-1">Applicant's Name : {myVisa.visaData.fastName}  {myVisa.visaData.lastName}</p>
                 <p>Applicant’s Email : {user?.email}</p>
                   </div>
