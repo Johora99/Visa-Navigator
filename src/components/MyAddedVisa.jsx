@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-export default function MyAddedVisa({data,setAddedData,addedData}) {
+export default function MyAddedVisa({data,setAddedData,addedData,index}) {
   const {user} = useContext(AuthContext)
     const [isModalOpen, setIsModalOpen] = useState(false);
   const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = data;
@@ -60,29 +60,77 @@ export default function MyAddedVisa({data,setAddedData,addedData}) {
     });
 
   return (
-    <div data-aos="zoom-in" className="flex flex-col lg:flex-row gap-10 bg-Tangerine bg-opacity-[0.3] p-5 text-base text-white font-xl">
+       <>
+        <tr className="w-full  shadow-lg hover:shadow-xl transition duration-300 rounded-lg">
+  {/* Index */}
+  <th className="py-4 px-6 text-center font-bold  rounded-l-lg">
+    {index + 1}
+  </th>
 
-       <div>
-        <img src={image} alt="" className="w-32 "/>
-        <div className="hidden lg:block">
-        <button className="font-semibold border-[1px] border-white py-1 px-5 my-3" onClick={openModal}>Update</button><br />
-        <button onClick={() => handleDeleteItem(user.email)}className="font-semibold border-[1px] border-white py-1 px-5 ">Delete</button>
-        </div>
-       </div>
-       <div>
-        <p>Country : {countryName}</p>
-        <p>Visa Type : {visaType}</p>
-        <p>Processing Time : {processingTime}</p>
-        <p>Fee : {fee}</p>
-        <p>Validity : {validity}</p>
-        <p>Application method: {applicationMethod}</p>
-       </div>
-         <div className="lg:hidden">
-        <button className="font-semibold border-[1px] border-white py-1 px-5 my-3" onClick={openModal}>Update</button><br />
-        <button onClick={() => handleDeleteItem(user.email)}className="font-semibold border-[1px] border-white py-1 px-5 ">Delete</button>
-        </div>
+  {/* Image */}
+  <td className="py-4 px-6 text-center">
+    <img
+      src={image}
+      alt="Visa"
+      className="w-14 h-14 object-cover rounded-full border-2 border-Tangerine shadow-md"
+    />
+  </td>
+
+  {/* Country */}
+  <td className="py-4 px-6  font-medium text-center">
+    {countryName}
+  </td>
+
+  {/* Visa Type */}
+  <td className="py-4 px-6 text-center">
+    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+      {visaType}
+    </span>
+  </td>
+
+  {/* Processing Time */}
+  <td className="py-4 px-6  text-center">{processingTime}</td>
+
+  {/* Fee */}
+  <td className="py-4 px-6  text-center font-semibold">
+    ${fee}
+  </td>
+
+  {/* Validity */}
+  <td className="py-4 px-6 text-center">
+    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium">
+      {validity}
+    </span>
+  </td>
+
+  {/* Application Method */}
+  <td className="py-4 px-6  text-center">{applicationMethod}</td>
+
+  {/* Update Button */}
+  <td className="py-4 px-6 text-center">
+    <button
+      className="font-semibold bg-Tangerine hover:bg-orange-600 text-white py-2 px-4 rounded-full transition duration-200"
+      onClick={openModal}
+    >
+      Update
+    </button>
+  </td>
+
+  {/* Delete Button */}
+  <td className="py-4 px-6 text-center">
+    <button
+      onClick={() => handleDeleteItem(user.email)}
+      className="font-semibold bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-full transition duration-200"
+    >
+      Delete
+    </button>
+  </td>
+</tr>
+
+       
+  
        <UpdateModal data={data} closeModal={closeModal} addedData={addedData} setAddedData={setAddedData}></UpdateModal>
-    </div>
+    </>
   )
 }
 

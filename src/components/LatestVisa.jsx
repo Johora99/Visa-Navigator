@@ -1,40 +1,76 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom';
+import { BorderBeam } from './ui/border-beam';
+import AnimatedGradientText from './ui/animated-gradient-text';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-export default function LatestVisa({visa}) {
- const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = visa;
-     AOS.init({
-      offset: 200,
-      duration: 600,
-      easing: 'ease-in-sine',
-      delay: 100,
-    });
-
+import { useEffect } from 'react';
+export default function LatestVisa({ visa }) {
+  const {
+    _id,
+    image,
+    countryName,
+    visaType,
+    processingTime,
+    fee,
+    validity,
+    applicationMethod,
+  } = visa;
+  useEffect(() => {
+  AOS.init({
+    duration: 1000, 
+    once: true, 
+  });
+}, []);
   return (
-    <div data-aos="flip-left">
-      <div className="card bg-Tangerine bg-opacity-[0.1] shadow-xl p-5 lg:p-10 h-full lg:hover:transform lg:hover:scale-125 transition-all duration-300 z-[10]">
-        <div className='bg-Tangerine p-5 bg-opacity-10'>
-  <figure>
-    <img
-      src={image}
-      alt="Shoes" className='w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover'/>
-  </figure>
-  <div className="">
-    <div className='mt-5 text-center'>
-      <p className='text-base text-Gray font-medium'>Country : {countryName}</p>
-      <p className='text-base text-Gray font-medium my-2'>Visa Type : {visaType}</p>
-      <p className='text-base text-Gray font-medium'>Processing Time : {processingTime}</p>
-      <p className='text-base text-Gray font-medium my-2'>Fee : $ {fee}</p>
-      <p className='text-base text-Gray font-medium'>Validity : {validity}</p>
-      <p className='text-base text-Gray font-medium my-2'>Application Method : {applicationMethod}</p>
-    </div>
-    <div data-aos="zoom-in" className="card-actions justify-center">
-      <Link to={`/visaApplication/${_id}`} className="text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-2 px-5 mt-5 hover:text-white hover:bg-Tangerine">See Details</Link>
-    </div>
-  </div>
+    <div data-aos="zoom-in" className="group relative overflow-hidden bg-gradient-to-br from-gray-100 to-white rounded-xl shadow-lg transform transition-all duration-500 hover:shadow-2xl">
+      <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-orange-500 rounded-full opacity-20 blur-2xl"></div>
+      {/* Card Content */}
+      <div className="relative">
+        <div className="px-8 pt-20 pb-8 text-center">
+          {/* Image with Rotation Animation */}
+          <div
+            className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-28 h-28 lg:w-32 lg:h-32 rounded-full bg-gradient-to-tr from-orange-400 to-gray-200 border-4 border-white shadow-lg overflow-hidden card-image"
+          >
+            <img
+              src={image}
+              alt="Visa"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Title with Gradient Animation */}
+          <AnimatedGradientText>
+          <h3 className="mb-3">{countryName}</h3>
+          </AnimatedGradientText>
+          <p className="text-sm text-gray-600 transition-colors duration-300 group-hover:text-orange-400 mb-6">
+            Visa Type: <span className="font-medium">{visaType}</span>
+          </p>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+            <p>Processing Time:</p>
+            <p className="font-medium text-right text-gray-800">{processingTime}</p>
+            <p>Fee:</p>
+            <p className="font-medium text-right text-gray-800">${fee}</p>
+            <p>Validity:</p>
+            <p className="font-medium text-right text-gray-800">{validity}</p>
+            <p>Application:</p>
+            <p className="font-medium text-right text-gray-800">{applicationMethod}</p>
+          </div>
+
+          {/* Call-to-Action Button with Gradient Animation */}
+          <div className="mt-6">
+            <Link
+              to={`/visaApplication/${_id}`}
+              className="inline-block py-2 px-8 shadow-md text-lg font-semibold text-white card-button transform transition-all duration-500 hover:scale-110"
+            >
+              See Details
+            </Link>
+          </div>
         </div>
-</div>
+      </div>
+      <BorderBeam size={350} duration={12} delay={9} />
     </div>
-  )
+  );
 }

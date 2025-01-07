@@ -6,6 +6,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider'
 import { ThemeContext } from '../Pages/ThemeProvider';
 
 import { Tooltip as ReactTooltip } from 'react-tooltip';
+import TypingAnimation from './ui/typing-animation';
 
 
 export default function Navbar() {
@@ -21,16 +22,20 @@ export default function Navbar() {
     
     <div className='flex items-center gap-2'>
       <img src={logo} alt="" className='w-10 lg:w-auto'/>
-      <h3 className='text-xl lg:text-4xl font-semibold'>Swift<span className='text-Tangerine'>Visa</span></h3>
+      <h3 className='text-xl lg:text-4xl font-semibold flex items-center'>Swift<span className='text-Tangerine'><TypingAnimation>Visa</TypingAnimation></span></h3>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-6 *:text-lg *:font-medium">
         <NavLink to='/'  className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>Home</a></NavLink>
         <NavLink to='/allVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>All visas</a></NavLink>
-        <NavLink to='/addVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>Add Visa</a></NavLink>
+      {
+        user && <>
+          <NavLink to='/addVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>Add Visa</a></NavLink>
         <NavLink to='/myAddedVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>My added visas</a></NavLink>
         <NavLink to='/myAppliedVisa' className={({ isActive }) => (isActive ? "underline decoration-Tangerine decoration-2 underline-offset-2" : "")}><a>My Visa applications</a></NavLink>
+        </>
+      }
     </ul>
     
   </div>
@@ -38,7 +43,7 @@ export default function Navbar() {
     <div className='hidden lg:block'>
     <div className='flex items-center gap-3'>
             {
-              user ? <Link onClick={signOutUser} to='/' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
+              user ? <Link onClick={signOutUser} to='/' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent border-[2px] border-Tangerine transition-all duration-300 ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log Out</Link> : <Link to='/logIn' className='text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8'>Log In</Link>
             }
             {user ? (
         <>
@@ -54,7 +59,7 @@ export default function Navbar() {
       ) : (
         <Link
           to="/register"
-        className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}
+        className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent border-[2px] border-Tangerine transition-all duration-300 ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}
         >
           Register
         </Link>
@@ -130,25 +135,24 @@ export default function Navbar() {
         className="menu menu-sm dropdown-content bg-Tangerine rounded-box z-[10] mt-3 w-52 p-2 shadow right-0 *:text-white">
         <NavLink to='/'><a>Home</a></NavLink>
         <NavLink to='/allVisa'><a>All visas</a></NavLink>
-        <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
+        {
+          user && <>
+          <NavLink to='/addVisa'><a>Add Visa</a></NavLink>
         <NavLink to='/myAddedVisa'><a>My added visas</a></NavLink>
         <NavLink to='/myAppliedVisa'><a>My Visa applications</a></NavLink>
+          </>
+        }
+            {
+              user ? <Link onClick={signOutUser} to='/'>Log Out</Link> : <Link to='/logIn' >Log In</Link>
+            }
+            
       </ul>
     </div>
   </div>
 
 </div>
        </nav>
-       <div className='lg:hidden'>
-          <div className='flex items-center justify-center gap-3 mb-5'>
-            {
-              user ? <Link onClick={signOutUser} to='/' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log Out</Link> : <Link to='/logIn' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Log In</Link>
-            }
-             {
-              user ? <img src={user?.photoURL} alt="" className='w-12 h-12 rounded-full cursor-pointer' title={user?.displayName}/>:<Link to='/register' className={`text-white text-lg lg:text-xl font-semibold bg-Tangerine py-2 px-8 hover:bg-transparent hover:border-[2px] hover:border-Tangerine ${isDarkMode ? 'hover:text-white':'hover:text-black'}`}>Register</Link>
-             }
-    </div>
-       </div>
+       
       </div>
     </div>
   )

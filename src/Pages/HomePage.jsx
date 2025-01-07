@@ -4,6 +4,9 @@ import Banner from "../components/Banner";
 import LatestVisas from "../components/LatestVisas";
 import OurDestination from "../components/OurDestination";
 import OurServices from "../components/OurServices";
+import ChooseUs from "@/components/ChooseUs";
+import CommonQuestion from "@/components/CommonQuestion";
+import Testimonial from "@/components/Testimonial";
 
 
 
@@ -19,6 +22,9 @@ export default function HomePage() {
       <LatestVisas></LatestVisas>
       <OurServices></OurServices>
       <OurDestination></OurDestination>
+      <ChooseUs></ChooseUs>
+      <Testimonial></Testimonial>
+      <CommonQuestion></CommonQuestion>
       <Assesment></Assesment>
     </div>
   )

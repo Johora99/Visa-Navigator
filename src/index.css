@@ -48,3 +48,82 @@ body.dark {
 .btn:hover{
   background: transparent;
 }
+/* Image Rotation Animation */
+@keyframes imageRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Image rotation animation */
+.card-image {
+  animation: imageRotate 5s linear infinite;
+}
+
+
+
+
+/* Button Gradient Animation */
+.card-button {
+  background: linear-gradient(90deg, #ff8a00, #ff5e00, #ff8a00);
+  background-size: 300% 300%;
+  animation: titleGradient 3s ease infinite;
+}
+
+.card-button:hover {
+  background: linear-gradient(90deg, #ff5e00, #ff8a00, #ff5e00);
+}
+
+@keyframes typingEffect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes gradientEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-typingEffect {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingEffect 3s steps(30, end) 1 forwards, blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animate-gradientEffect {
+  background-size: 200% 200%;
+  animation: gradientEffect 4s ease infinite;
+}
+
+
+
+.awssld__content{
+  background-color: transparent !important;
+}
+

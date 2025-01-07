@@ -4,7 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
+export default function MyAppliedVisa({myVisa,setVisaData,visaData,index}) {
     const {user} = useContext(AuthContext)
     const {_id,image,countryName,visaType,processingTime,documents,description,age,fee,validity,applicationMethod} = myVisa.details;
 
@@ -49,32 +49,26 @@ export default function MyAppliedVisa({myVisa,setVisaData,visaData}) {
     });
 
   return (
-    <div>
-      <div data-aos="zoom-in" className="bg-Tangerine bg-opacity-[0.5] rounded-xl">
-              <div className=' w-full bg-black bg-opacity-[0.3] p-5'>
-              <div className="text-white text-lg">
-                  <img src={image} alt="" className="w-14 h-14 rounded-full" />
-                  <div>
-                  <div>
-                <p className="mt-5">Country : {countryName} </p>
-                <p className="my-1">Visa Type : {visaType}</p>
-                <p>Processing Time : {processingTime}</p>
-                <p className="my-1">Fee : {fee}</p>
-                <p>Validity : {validity}</p>
-                  </div>
-                  <div>
-                <p className="my-1">Application Method : {applicationMethod}</p>
-                <p>Applied Date : {myVisa.visaData.date} </p>
-                <p className="my-1">Applicant's Name : {myVisa.visaData.fastName}  {myVisa.visaData.lastName}</p>
-                <p>Applicant’s Email : {user?.email}</p>
-                  </div>
-                  </div>
-              </div>
-              <div>
-                <button onClick={() => handleVisaCancel(myVisa._id)} className="text-white border-[1px] border-Tangerine py-2 px-5 font-semibold mt-5">Cancel</button>
-              </div>
-              </div>
-            </div>
-    </div>
+    
+    
+                
+          <tr className="bg-Tangerine bg-opacity-[0.5] rounded-xl">
+          <th>{index + 1}</th>
+        <td><img src={image} alt="" className="w-14 h-14 rounded-full"/></td>
+        <td>{countryName}</td>
+        <td>{visaType}</td>
+        <td>{processingTime}</td>
+        <td>{fee}</td>
+        <td>{validity}</td>
+        <td>{applicationMethod}</td>
+        <td>{myVisa.visaData.date}</td>
+        <td>{myVisa.visaData.fastName} {myVisa.visaData.lastName}</td>
+        <td>{user?.email}</td>
+        <td><button onClick={() => handleVisaCancel(myVisa._id)} className="text-white border-[1px] border-Tangerine py-2 px-5 font-semibold mt-5">Cancel</button></td>
+      </tr>
+      
+      
+          
+    
   )
 }

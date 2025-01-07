@@ -71,13 +71,13 @@ export default function AddVisaPage() {
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Country Image</span>
             </label><br />
-            <input type="url" name="image" id="" placeholder='Enter Country Image' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3         focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="url" name="image" id="" placeholder='Enter Country Image' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3         focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
         <div>
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Country Name</span>
             </label><br />
-            <input type="text" name="countryName" id="" placeholder='Enter Country Name' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base focus:border-Tangerine font-normal px-2.5 py-3 ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="text" name="countryName" id="" placeholder='Enter Country Name' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base focus:border-Tangerine font-normal px-2.5 py-3 ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -85,7 +85,7 @@ export default function AddVisaPage() {
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Visa Type</span>
             </label><br />
-        <select   className={`select select-bordered border-Tangerine rounded-xl mb-5 text-base focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} name="visaType">
+        <select   className={`select select-bordered border-Tangerine rounded-xl mb-5 text-base focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} name="visaType" required>
         <option selected className="text-base">Student Visa</option>
        <option>Work Visa</option>
        <option>Tourist Visa</option>
@@ -98,7 +98,7 @@ export default function AddVisaPage() {
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Processing Time</span>
             </label><br />
-            <input type="text" name="processingTime" id="" placeholder='Enter your email' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="text" name="processingTime" id="" placeholder='Enter your email' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
         </div>
           <div>
@@ -108,28 +108,28 @@ export default function AddVisaPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
               <div className="form-control">
            <label className="label cursor-pointer justify-start gap-3">
-          <input type="checkbox"  name="validPassport" value="Valid Passport" className="w-5 h-5" />
+          <input type="checkbox"  name="validPassport" value="Valid Passport" className="w-5 h-5" required/>
             <span className={`label-text text-base ${isDarkMode ? " text-white " : " text-black"}`}>Valid Passport</span>
          </label>
          </div>
               <div className="form-control">
            <label className="label cursor-pointer justify-start gap-3">
           <input type="checkbox"  name="visaApplicationForm"
-              value="Visa Application Form" className=" w-5 h-5" />
+              value="Visa Application Form" className=" w-5 h-5" required/>
             <span className={`label-text text-base ${isDarkMode ? " text-white " : " text-black"}`}>Visa Application From </span>
          </label>
          </div>
               <div className="form-control">
            <label className="label cursor-pointer justify-start gap-3">
           <input type="checkbox"  name="passportPhoto"
-              value="Recent Passport-Sized Photo" className=" w-5 h-5" />
+              value="Recent Passport-Sized Photo" className=" w-5 h-5" required/>
             <span className={`label-text text-base ${isDarkMode ? " text-white " : " text-black"}`}>Recent Passport-Sized Photo</span>
          </label>
          </div>
               <div className="form-control">
            <label className="label cursor-pointer justify-start gap-3">
           <input type="checkbox"  name="nidCardPhotocopy"
-              value="NID Card Photocopy" className=" w-5 h-5" />
+              value="NID Card Photocopy" className=" w-5 h-5" required/>
             <span className={`label-text text-base ${isDarkMode ? " text-white " : " text-black"}`}>NID Card Photocopy</span>
          </label>
          </div>
@@ -139,20 +139,20 @@ export default function AddVisaPage() {
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Description</span>
             </label><br />
-            <textarea className={`textarea textarea-bordered w-full border-Tangerine placeholder:text-base mb-5 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} placeholder="Description" name="description"></textarea>
+            <textarea className={`textarea textarea-bordered w-full border-Tangerine placeholder:text-base mb-5 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} placeholder="Description" name="description" required></textarea>
            </div>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div>
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Age Restriction</span>
             </label><br />
-            <input type="number" name="age" id="" placeholder='Enter Your Age' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="number" name="age" id="" placeholder='Enter Your Age' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
               <div>
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Fee ($)</span>
             </label><br />
-            <input type="number" name="fee" id="" placeholder='Enter Your Fee' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="number" name="fee" id="" placeholder='Enter Your Fee' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
            </div>
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -160,13 +160,13 @@ export default function AddVisaPage() {
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white  " : " text-black"}`}>Validity</span>
             </label><br />
-            <input type="text" name="validity" id="" placeholder='Enter Validation' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="text" name="validity" id="" placeholder='Enter Validation' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
         <div>
             <label className='inline-block mb-2'>
                 <span className={`text-base text-black font-medium ${isDarkMode ? " text-white " : " text-black"}`}>Application Method</span>
             </label><br />
-            <input type="text" name="method" id="" placeholder='Enter Application Method' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`}/>
+            <input type="text" name="method" id="" placeholder='Enter Application Method' className={`w-full rounded-xl border-[1px] border-Tangerine mb-5 placeholder:text-base font-normal px-2.5 py-3 focus:border-Tangerine ${isDarkMode ? "bg-gray-900 text-white " : "bg-white text-black"}`} required/>
         </div>
            </div>
          <div className='w-full'>

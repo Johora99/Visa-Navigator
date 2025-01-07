@@ -10,6 +10,7 @@ import Img4 from '../assets/city-skyline-of-Sydney-Australia.webp'
 import australianFlag from '../assets/Flag_of_Australia.svg.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ShimmerButton from './ui/shimmer-button'
 export default function OurDestination() {
     const bgStyle = {
    backgroundImage: `url(${bgImg})`,
@@ -112,8 +113,10 @@ export default function OurDestination() {
        </div>
 
       </div>
-         <div data-aos="zoom-in" className='text-center lg:mt-72 mb-20'>
-          <button className='bg-Tangerine py-3 px-10 text-white text-xl font-semibold mt-20'>See More</button>
+         <div data-aos="zoom-in" className='text-center lg:mt-72  my-20'>
+          <ShimmerButton>
+            <button className='bg-Tangerine px-10 text-white text-xl font-semibold'>See More</button>
+          </ShimmerButton>
          </div>
     </div>
   )

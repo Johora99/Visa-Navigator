@@ -36,7 +36,7 @@ export default function OurServices() {
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
-              <h3 className='text-2xl font-semibold'>Student Visa</h3>
+              <h3 className='text-2xl font-semibold text-black'>Student Visa</h3>
               <p className='text-base font-medium text-Gray my-3'>Processing times vary by visa type and country, <br /> ranging from a few weeks to an several months</p>
               <button className={`text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-1 px-5 mt-10 hover:bg-Tangerine hover:text-white`}>Read More</button>
              </div>
@@ -50,7 +50,7 @@ export default function OurServices() {
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
-              <h3 className='text-2xl font-semibold'>Business Visa</h3>
+              <h3 className='text-2xl font-semibold text-black'>Business Visa</h3>
             <p className='text-base font-medium text-Gray my-3'>Processing times vary by visa type and country, <br /> ranging from a few weeks to an several months</p>
               <button className={`text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-1 px-5 mt-10 hover:bg-Tangerine hover:text-white`}>Read More</button>
              </div>
@@ -64,7 +64,7 @@ export default function OurServices() {
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
-              <h3 className='text-2xl font-semibold'>Family Visa</h3>
+              <h3 className='text-2xl font-semibold text-black'>Family Visa</h3>
             <p className='text-base font-medium text-Gray my-3'>Processing times vary by visa type and country, <br /> ranging from a few weeks to an several months</p>
               <button className={`text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-1 px-5 mt-10 hover:bg-Tangerine hover:text-white`}>Read More</button>
              </div>
@@ -78,7 +78,7 @@ export default function OurServices() {
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
-              <h3 className='text-2xl font-semibold'>Tourist Visa</h3>
+              <h3 className='text-2xl font-semibold text-black'>Tourist Visa</h3>
             <p className='text-base font-medium text-Gray my-3'>Processing times vary by visa type and country, <br /> ranging from a few weeks to an several months</p>
               <button className={`text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-1 px-5 mt-10 hover:bg-Tangerine hover:text-white`}>Read More</button>
              </div>
@@ -92,7 +92,7 @@ export default function OurServices() {
               </div>
             </div>
              <div className='absolute right-0 -bottom-1/3 bg-white p-5 shadow-lg rounded-xl rounded-tr-none'>
-              <h3 className='text-2xl font-semibold'>Work Visa</h3>
+              <h3 className='text-2xl font-semibold text-black'>Work Visa</h3>
             <p className='text-base font-medium text-Gray my-3'>Processing times vary by visa type and country, <br /> ranging from a few weeks to an several months</p>
               <button className={`text-Tangerine text-lg font-semibold border-[1px] border-Tangerine py-1 px-5 mt-10 hover:bg-Tangerine hover:text-white`}>Read More</button>
              </div>

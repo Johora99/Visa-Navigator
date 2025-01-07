@@ -28,25 +28,41 @@ export default function Footer() {
   <aside data-aos="fade-right">
     <img src={logo} alt="" />
     <h3 className={`text-xl lg:text-4xl font-semibold ${isDarkMode ? " text-white" : " text-black"}`}>Swift<span className='text-Tangerine'>Visa</span></h3>
-    <ul className='flex items-center gap-5 mt-5'>
-      <li>
-        <Link><FaFacebookF className='text-xl text-Tangerine'/></Link>
-      </li>
-      <li>
-        <Link><FaInstagram className='text-xl text-Tangerine'/></Link>
-      </li>
-      <li>
-        <Link><FaXTwitter className='text-xl text-Tangerine'/></Link>
-      </li>
-    </ul>
+  <ul className="flex items-center gap-5 mt-5">
+  <li>
+    <Link
+      to="https://www.facebook.com/zowriya.zara.9/" target='_blank'
+      className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-Tangerine to-orange-500 shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg"
+    >
+      <FaFacebookF className="text-xl text-white group-hover:rotate-[360deg] transition-transform duration-500 ease-in-out" />
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="https://www.instagram.com/rrozalin_roza/" target='_blank'
+      className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-Tangerine to-orange-500 shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg"
+    >
+      <FaInstagram className="text-xl text-white group-hover:rotate-[360deg] transition-transform duration-500 ease-in-out" />
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="https://x.com/JohoraTuz99" target='_blank'
+      className="group flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-Tangerine to-orange-500 shadow-md transition-all duration-300 hover:scale-110 hover:shadow-lg"
+    >
+      <FaXTwitter className="text-xl text-white group-hover:rotate-[360deg] transition-transform duration-500 ease-in-out" />
+    </Link>
+  </li>
+</ul>
+
   </aside>
   <nav data-aos="fade-up">
-    <h6 className={`text-2xl font-semibold mb-3 ${isDarkMode ? " text-white" : " text-black"}`}>Services</h6>
-    <a className="text-base text-Gray font-medium hover:text-Tangerine">Work Visa</a>
-    <a className="text-base text-Gray font-medium hover:text-Tangerine">Student Visa</a>
-    <a className="text-base text-Gray font-medium hover:text-Tangerine">Business Visa</a>
-    <a className="text-base text-Gray font-medium hover:text-Tangerine">Tour Visa</a>
-    <a className="text-base text-Gray font-medium hover:text-Tangerine">Family Visa</a>
+    <h6 className={`text-2xl font-semibold mb-3 ${isDarkMode ? " text-white" : " text-black"}`}>Quick Exes</h6>
+    <Link to='/' className="text-base text-Gray font-medium hover:text-Tangerine">Home</Link>
+    <Link to='/allVisa' className="text-base text-Gray font-medium hover:text-Tangerine">All visas</Link>
+    <Link to='/addVisa' className="text-base text-Gray font-medium hover:text-Tangerine">Add Visa</Link>
+    <Link to='/myAddedVisa' className="text-base text-Gray font-medium hover:text-Tangerine">My added visas</Link>
+    <Link to='/myAppliedVisa' className="text-base text-Gray font-medium hover:text-Tangerine">My Visa applications</Link>
   </nav>
   <nav data-aos="fade-up">
     <h6 className={`text-2xl font-semibold mb-3 ${isDarkMode ? " text-white" : " text-black"}`}>Company</h6>

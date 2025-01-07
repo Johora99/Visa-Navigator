@@ -47,10 +47,34 @@ export default function MyAddedVisaPage() {
      <div style={bgStyle}>
       <div className=" bg-black bg-opacity-[0.3]">
     <div className="container w-11/12 mx-auto mb-20">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5">
-         {
-          addedData.map(data => <MyAddedVisa key={data._id} data={data} setAddedData={setAddedData} addedData={addedData}></MyAddedVisa>)
+      <div>
+      <div className="overflow-x-auto">
+  <table className="table w-full bg-transparent text-white text-base">
+    {/* head */}
+    <thead>
+      <tr className="text-lg text-black">
+        <th>#</th>
+        <th>Country Flag</th>
+        <th>Country</th>
+        <th>Visa Type</th>
+        <th>Processing Time</th>
+        <th>Fee</th>
+        <th>Validity</th>
+        <th>Application method</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+          addedData.map((data,index) => <MyAddedVisa key={data._id} data={data} setAddedData={setAddedData} addedData={addedData} index={index}></MyAddedVisa>)
          }
+      
+      
+      
+    </tbody>
+  </table>
+</div>
       </div>
     </div>
       </div>

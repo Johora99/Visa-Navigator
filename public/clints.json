@@ -1,0 +1,49 @@
+{
+  "client_satisfaction": [
+    {
+      "id": "CS001",
+      "name": "John Doe",
+      "rating": 4.8,
+      "feedback": "The visa application process was smooth and straightforward. The team provided clear instructions, and my visa was approved quickly. Highly recommended!",
+      "location": "New York, USA",
+      "date": "2024-10-15",
+      "image": "https://i.ibb.co.com/XbW4Vbt/360-F-302884605-actpip-Od-POQHDTn-Ftp4zg4-Rtl-Wzh-OASp.jpg"
+    },
+    {
+      "id": "CS002",
+      "name": "Anna Müller",
+      "rating": 5.0,
+      "feedback": "Fantastic service! The visa processing was fast, and they helped me with all the paperwork. I received my visa without any issues.",
+      "location": "Berlin, Germany",
+      "date": "2024-10-20",
+      "image": "https://i.ibb.co.com/XX01C8g/attractive-1869761-1280.jpg"
+    },
+    {
+      "id": "CS003",
+      "name": "Liam Smith",
+      "rating": 4.5,
+      "feedback": "Great visa service. The customer support was responsive and guided me step by step through the process. The only issue was some minor delays in document verification.",
+      "location": "Sydney, Australia",
+      "date": "2024-11-01",
+      "image": "https://i.ibb.co.com/1bGSnmd/istockphoto-1191193169-612x612.jpg"
+    },
+    {
+      "id": "CS004",
+      "name": "Sophia Becker",
+      "rating": 4.7,
+      "feedback": "I was impressed by how professional the team was. They helped me prepare all the necessary documents for my visa. The process was faster than expected.",
+      "location": "Munich, Germany",
+      "date": "2024-11-05",
+      "image": "https://i.ibb.co.com/dk8VshV/istockphoto-1418260625-612x612.jpg"
+    },
+    {
+      "id": "CS005",
+      "name": "Carlos García",
+      "rating": 4.9,
+      "feedback": "Excellent service! The visa team answered all my questions and made the process hassle-free. I received my visa on time. Sehr zufrieden!",
+      "location": "Madrid, Spain",
+      "date": "2024-11-10",
+      "image": "https://i.ibb.co.com/r61XHXM/pexels-justin-shaifer-501272-1222271.jpg"
+    }
+  ]
+}

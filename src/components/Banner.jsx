@@ -1,4 +1,3 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/swiper-bundle.css';
@@ -13,16 +12,18 @@ import Img6 from '../assets/slid6.webp'
 import { useRef } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "motion/react"
 export default function Banner() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   
-  const onAutoplayTimeLeft = (s, time, progress) => {
+  const onAutoplayTimeLeft = (time, progress) => {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  progressContent.current.textContent = `${Math.ceil(time / 1000)}`;
+
+
   };
     
-
   return (
      
     <div className='w-full'>
@@ -46,7 +47,8 @@ export default function Banner() {
   
           <SwiperSlide>
             <div className='relative'>
-                  <img src={Img1} alt="" className='absolute w-full  h-[300px] lg:h-[750px] object-cover'/>
+                  <img src={Img1} alt="" className='absolute w-full  h-[300px] lg:h-[750px] object-cover'
+                  />
                   <div className='absolute left-0 z-[10] pt-10 pl-10 lg:pt-20 lg:pl-20'>
                 <h2 className='text-3xl lg:text-7xl text-white font-extrabold lg:leading-[100px]'>
     <span  style={{ display: 'block' }}>
@@ -263,4 +265,4 @@ export default function Banner() {
     </div>
 
   )
-}
+} 
