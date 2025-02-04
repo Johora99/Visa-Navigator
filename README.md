@@ -66,7 +66,23 @@ Visa Navigator is a comprehensive web application designed to streamline the vis
   Enhanced functionality with libraries such as React Tooltip and Tailwind CSS for tooltips and styling.
 
   
+### Frontend Setup
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Johora99/Visa-Navigator.git
+   cd Visa-Navigator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 
 ## 🔗 Live Link
